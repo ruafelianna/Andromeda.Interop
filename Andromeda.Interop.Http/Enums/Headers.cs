@@ -2,7 +2,7 @@ using Andromeda.SourceGenerators.Enum;
 
 namespace Andromeda.Interop.Http.Enums
 {
-    [HasConstStrings(ConstClass = nameof(HeaderConsts))]
+    [HasStrings(StringsClass = nameof(HeaderConsts))]
     public enum Headers
     {
         Accept,

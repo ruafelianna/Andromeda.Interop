@@ -2,7 +2,7 @@ using Andromeda.SourceGenerators.Enum;
 
 namespace Andromeda.Interop.Http.Enums
 {
-    [HasConstStrings(ConstClass = nameof(MimeTypeConsts))]
+    [HasStrings(StringsClass = nameof(MimeTypeConsts))]
     public enum MimeTypes
     {
         ApplicationJson,
