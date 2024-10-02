@@ -5,4 +5,5 @@
   </Folder>
   <Project Path="Andromeda.Interop.ACPI\Andromeda.Interop.ACPI.csproj" />
   <Project Path="Andromeda.Interop.Http\Andromeda.Interop.Http.csproj" />
+  <Project Path="Andromeda.Interop.Modbus\Andromeda.Interop.Modbus.csproj" />
 </Solution>
