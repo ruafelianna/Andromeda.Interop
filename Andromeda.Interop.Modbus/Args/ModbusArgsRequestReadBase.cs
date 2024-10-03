@@ -1,4 +1,5 @@
 using Andromeda.Interop.Modbus.Abstractions.Enums;
+using Andromeda.Numerics;
 using System;
 using System.Collections.Generic;
 
@@ -37,10 +38,10 @@ namespace Andromeda.Interop.Modbus.Args
         #region Properties
 
         public override IReadOnlyList<byte> RawData => [
-            unchecked((byte)(StartingAddress >> 8)),
-            unchecked((byte)(StartingAddress & 0xFF)),
-            unchecked((byte)(QuantityOfItems >> 8)),
-            unchecked((byte)(QuantityOfItems & 0xFF)),
+            StartingAddress.Byte1(),
+            StartingAddress.Byte2(),
+            QuantityOfItems.Byte1(),
+            QuantityOfItems.Byte2(),
         ];
 
         private readonly ushort _startingAddress;

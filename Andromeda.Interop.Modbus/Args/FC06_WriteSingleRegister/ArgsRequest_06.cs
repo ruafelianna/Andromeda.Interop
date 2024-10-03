@@ -1,5 +1,6 @@
 using Andromeda.Interop.Modbus.Abstractions.Args.FC06_WriteSingleRegister;
 using Andromeda.Interop.Modbus.Abstractions.Enums;
+using Andromeda.Numerics;
 using System.Collections.Generic;
 
 namespace Andromeda.Interop.Modbus.Args.FC06_WriteSingleRegister
@@ -45,10 +46,10 @@ namespace Andromeda.Interop.Modbus.Args.FC06_WriteSingleRegister
 
         public override IReadOnlyList<byte> RawData
             => [
-                unchecked((byte)(RegisterAddress >> 8)),
-                unchecked((byte)(RegisterAddress & 0xFF)),
-                unchecked((byte)(RegisterValue >> 8)),
-                unchecked((byte)(RegisterValue & 0xFF)),
+                RegisterAddress.Byte1(),
+                RegisterAddress.Byte2(),
+                RegisterValue.Byte1(),
+                RegisterValue.Byte2(),
             ];
 
         public ushort RegisterAddress => RegAddress;

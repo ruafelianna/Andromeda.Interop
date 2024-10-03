@@ -1,3 +1,5 @@
+using Andromeda.Numerics;
+
 namespace Andromeda.Interop.Modbus.Abstractions.Args.Extensions
 {
     public static class ModbusTCPIPExtensions
@@ -13,12 +15,12 @@ namespace Andromeda.Interop.Modbus.Abstractions.Args.Extensions
             var length = unchecked((ushort)main.Length);
 
             return [
-                unchecked((byte)(id >> 8)),
-                unchecked((byte)(id & 0xFF)),
-                unchecked((byte)(protocol >> 8)),
-                unchecked((byte)(protocol & 0xFF)),
-                unchecked((byte)(length >> 8)),
-                unchecked((byte)(length & 0xFF)),
+                id.Byte1(),
+                id.Byte2(),
+                protocol.Byte1(),
+                protocol.Byte2(),
+                length.Byte1(),
+                length.Byte2(),
                 .. main
             ];
         }

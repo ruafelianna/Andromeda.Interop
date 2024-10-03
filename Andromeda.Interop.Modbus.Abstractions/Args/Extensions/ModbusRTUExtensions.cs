@@ -1,5 +1,6 @@
 using Andromeda.Checksums;
 using Andromeda.Checksums.Enums;
+using Andromeda.Numerics;
 using System.Collections.Generic;
 
 namespace Andromeda.Interop.Modbus.Abstractions.Args.Extensions
@@ -34,8 +35,8 @@ namespace Andromeda.Interop.Modbus.Abstractions.Args.Extensions
 
             return [
                 .. main,
-                unchecked((byte)(crc & 0xFF)),
-                unchecked((byte)(crc >> 8)),
+                crc.Byte1(),
+                crc.Byte2(),
             ];
         }
     }

@@ -1,6 +1,7 @@
 using Andromeda.Interop.Modbus.Abstractions.Args;
 using Andromeda.Interop.Modbus.Abstractions.Args.FC05_WriteSingleCoil;
 using Andromeda.Interop.Modbus.Abstractions.Enums;
+using Andromeda.Numerics;
 using System.Collections.Generic;
 
 namespace Andromeda.Interop.Modbus.Args.FC05_WriteSingleCoil
@@ -46,10 +47,10 @@ namespace Andromeda.Interop.Modbus.Args.FC05_WriteSingleCoil
 
         public override IReadOnlyList<byte> RawData
             => [
-                unchecked((byte)(OutputAddress >> 8)),
-                unchecked((byte)(OutputAddress & 0xFF)),
-                unchecked((byte)(OutputValue >> 8)),
-                unchecked((byte)(OutputValue & 0xFF)),
+                OutputAddress.Byte1(),
+                OutputAddress.Byte2(),
+                OutputValue.Byte1(),
+                OutputValue.Byte2(),
             ];
 
         public ushort OutputAddress => RegAddress;

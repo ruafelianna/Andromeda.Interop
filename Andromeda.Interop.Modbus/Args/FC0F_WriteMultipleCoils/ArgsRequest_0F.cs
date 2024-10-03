@@ -1,5 +1,6 @@
 using Andromeda.Interop.Modbus.Abstractions.Args.FC0F_WriteMultipleCoils;
 using Andromeda.Interop.Modbus.Abstractions.Enums;
+using Andromeda.Numerics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,10 +52,10 @@ namespace Andromeda.Interop.Modbus.Args.FC0F_WriteMultipleCoils
 
         public override IReadOnlyList<byte> RawData
             => [
-                unchecked((byte)(StartingAddress >> 8)),
-                unchecked((byte)(StartingAddress & 0xFF)),
-                unchecked((byte)(QuantityOfOutputs >> 8)),
-                unchecked((byte)(QuantityOfOutputs & 0xFF)),
+                StartingAddress.Byte1(),
+                StartingAddress.Byte2(),
+                QuantityOfOutputs.Byte1(),
+                QuantityOfOutputs.Byte2(),
                 ByteCount,
                 .. OutputsValue,
             ];
@@ -91,7 +92,14 @@ namespace Andromeda.Interop.Modbus.Args.FC0F_WriteMultipleCoils
 
         protected virtual void InitByteCount(
             out byte byteCount
-        ) => byteCount = unchecked((byte)((QuantityOfOutputs + 7) >> 3));
+        )
+        {
+            var count = QuantityOfOutputs.ContainingBytes();
+
+            ArgumentOutOfRangeException.ThrowIfGreaterThan(count, byte.MaxValue);
+
+            byteCount = unchecked((byte)count);
+        }
 
         protected virtual void InitOutputsValue(
             IEnumerable<bool> outsVal,
@@ -102,8 +110,8 @@ namespace Andromeda.Interop.Modbus.Args.FC0F_WriteMultipleCoils
             var count = 0;
             foreach (var item in outsVal)
             {
-                result[count >> 3] |= unchecked(
-                    (byte)((item ? 1 : 0) << (count & 8))
+                result[count.FullBytes()] |= unchecked(
+                    (byte)((item ? 1 : 0) << count.Mod8())
                 );
                 count++;
             }

@@ -22,6 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Andromeda.Common\Andromeda.Numerics\Andromeda.Numerics.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Assets\ModbusExceptionCodesStrings.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

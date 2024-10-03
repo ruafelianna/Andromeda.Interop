@@ -1,5 +1,6 @@
 using Andromeda.Interop.Modbus.Abstractions.Args.FC10_WriteMultipleRegisters;
 using Andromeda.Interop.Modbus.Abstractions.Enums;
+using Andromeda.Numerics;
 using System;
 using System.Collections.Generic;
 
@@ -50,10 +51,10 @@ namespace Andromeda.Interop.Modbus.Args.FC10_WriteMultipleRegisters
 
         public override IReadOnlyList<byte> RawData
             => [
-                unchecked((byte)(StartingAddress >> 8)),
-                unchecked((byte)(StartingAddress & 0xFF)),
-                unchecked((byte)(QuantityOfRegisters >> 8)),
-                unchecked((byte)(QuantityOfRegisters & 0xFF)),
+                StartingAddress.Byte1(),
+                StartingAddress.Byte2(),
+                QuantityOfRegisters.Byte1(),
+                QuantityOfRegisters.Byte2(),
                 ByteCount,
                 .. RegistersValue,
             ];
@@ -76,7 +77,7 @@ namespace Andromeda.Interop.Modbus.Args.FC10_WriteMultipleRegisters
         {
             var count = unchecked((byte)regsVal.Count);
 
-            ArgumentOutOfRangeException.ThrowIfNotEqual(count & 1, 0);
+            ArgumentOutOfRangeException.ThrowIfNotEqual(count.IsEven(), true);
 
             byteCount = count;
         }
