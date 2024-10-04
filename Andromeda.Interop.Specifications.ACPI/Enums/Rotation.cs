@@ -1,4 +1,4 @@
-namespace Andromeda.Interop.ACPI.Enums
+namespace Andromeda.Interop.Specifications.ACPI.Enums
 {
     public enum Rotation : byte
     {

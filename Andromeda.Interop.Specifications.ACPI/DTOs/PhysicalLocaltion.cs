@@ -1,7 +1,7 @@
 using System.Drawing;
-using Andromeda.Interop.ACPI.Enums;
+using Andromeda.Interop.Specifications.ACPI.Enums;
 
-namespace Andromeda.Interop.ACPI.DTOs
+namespace Andromeda.Interop.Specifications.ACPI.DTOs
 {
     /// <param name="Revision">6:0</param>
     /// <param name="IgnoreColor">7</param>
