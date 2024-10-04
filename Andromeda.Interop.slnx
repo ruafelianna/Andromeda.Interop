@@ -7,4 +7,5 @@
   <Project Path="Andromeda.Interop.Http\Andromeda.Interop.Http.csproj" />
   <Project Path="Andromeda.Interop.Modbus.Abstractions\Andromeda.Interop.Modbus.Abstractions.csproj" />
   <Project Path="Andromeda.Interop.Modbus\Andromeda.Interop.Modbus.csproj" />
+  <Project Path="Andromeda.Interop.Ports.Serial.Abstractions\Andromeda.Interop.Ports.Serial.Abstractions.csproj" />
 </Solution>
