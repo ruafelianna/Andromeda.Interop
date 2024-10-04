@@ -1,4 +1,4 @@
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC05_WriteSingleCoil;
+using Andromeda.Interop.Protocols.Modbus.Abstractions.Args;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -17,11 +17,11 @@ namespace Andromeda.Interop.Protocols.Modbus.Args.FC05_WriteSingleCoil
         {
         }
 
-        public static Task<ArgsResponseOk_05> Create(
+        public static async Task<IArgsResponseOk_05> Create(
             IArgsRequest_05 request,
-            Func<int, CancellationToken, Task<IReadOnlyList<byte>>> getBytes,
+            DGetBytes getBytes,
             CancellationToken token = default
-        ) => Create(
+        ) => await Create(
             (request, bytes) => new ArgsResponseOk_05(request, bytes),
             request,
             getBytes,

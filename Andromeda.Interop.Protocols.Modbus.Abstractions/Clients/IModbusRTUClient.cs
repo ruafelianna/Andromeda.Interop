@@ -1,16 +1,8 @@
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC01_ReadCoils;
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC02_ReadDiscreteInputs;
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC03_ReadHoldingRegisters;
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC04_ReadInputRegisters;
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC05_WriteSingleCoil;
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC06_WriteSingleRegister;
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC0F_WriteMultipleCoils;
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC10_WriteMultipleRegisters;
-using System.Threading.Tasks;
-using System.Threading;
 using Andromeda.Interop.Ports.Serial.Abstractions;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace Andromeda.Interop.Protocols.Modbus.Abstractions
+namespace Andromeda.Interop.Protocols.Modbus.Abstractions.Clients
 {
     public interface IModbusRTUClient : IModbusClient
     {

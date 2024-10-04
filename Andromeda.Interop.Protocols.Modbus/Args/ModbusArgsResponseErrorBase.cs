@@ -11,8 +11,10 @@ namespace Andromeda.Interop.Protocols.Modbus.Args
     {
         #region Ctor
 
-        public ModbusArgsResponseErrorBase(byte rawCode, byte exCode) :
-            base(rawCode)
+        public ModbusArgsResponseErrorBase(
+            byte rawCode,
+            byte exCode
+        ) : base(rawCode)
             => InitExceptionCode(exCode, out _exceptionCode);
 
         public ModbusArgsResponseErrorBase(
@@ -32,6 +34,26 @@ namespace Andromeda.Interop.Protocols.Modbus.Args
             ModbusExceptionCodes exCode
         ) : base(enumCode)
             => InitExceptionCode(exCode, out _exceptionCode);
+
+        public static IModbusArgsResponseError Create(
+            byte rawCode,
+            byte exCode
+        ) => new ModbusArgsResponseErrorBase(rawCode, exCode);
+
+        public static IModbusArgsResponseError Create(
+            byte rawCode,
+            ModbusExceptionCodes exCode
+        ) => new ModbusArgsResponseErrorBase(rawCode, exCode);
+
+        public static IModbusArgsResponseError Create(
+            ModbusFunctionCodes enumCode,
+            byte exCode
+        ) => new ModbusArgsResponseErrorBase(enumCode, exCode);
+
+        public static IModbusArgsResponseError Create(
+            ModbusFunctionCodes enumCode,
+            ModbusExceptionCodes exCode
+        ) => new ModbusArgsResponseErrorBase(enumCode, exCode);
 
         #endregion
 

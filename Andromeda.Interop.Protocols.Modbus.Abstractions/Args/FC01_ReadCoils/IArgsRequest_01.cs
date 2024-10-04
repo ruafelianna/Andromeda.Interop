@@ -1,5 +1,4 @@
 using Andromeda.Interop.Protocols.Modbus.Abstractions.Enums;
-using System.Collections.Generic;
 using System.Collections.Immutable;
 
 namespace Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC01_ReadCoils

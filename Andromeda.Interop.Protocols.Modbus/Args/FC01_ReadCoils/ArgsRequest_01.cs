@@ -1,4 +1,3 @@
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC01_ReadCoils;
 using Andromeda.Interop.Protocols.Modbus.Abstractions.Enums;
 
 namespace Andromeda.Interop.Protocols.Modbus.Args.FC01_ReadCoils

@@ -1,4 +1,4 @@
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC02_ReadDiscreteInputs;
+using Andromeda.Interop.Protocols.Modbus.Abstractions.Args;
 using Andromeda.Numerics;
 using System;
 using System.Collections.Generic;
@@ -23,11 +23,11 @@ namespace Andromeda.Interop.Protocols.Modbus.Args.FC02_ReadDiscreteInputs
                 out _quantityOfInputs
             );
 
-        public static Task<ArgsResponseOk_02> Create(
+        public static async Task<IArgsResponseOk_02> Create(
             IArgsRequest_02 request,
-            Func<int, CancellationToken, Task<IReadOnlyList<byte>>> getBytes,
+            DGetBytes getBytes,
             CancellationToken token = default
-        ) => Create(
+        ) => await Create(
             (request, bytes) => new ArgsResponseOk_02(request, bytes),
             request,
             getBytes,

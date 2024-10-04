@@ -1,4 +1,3 @@
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC04_ReadInputRegisters;
 using Andromeda.Interop.Protocols.Modbus.Abstractions.Enums;
 
 namespace Andromeda.Interop.Protocols.Modbus.Args.FC04_ReadInputRegisters

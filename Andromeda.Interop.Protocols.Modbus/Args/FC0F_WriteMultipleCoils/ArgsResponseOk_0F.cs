@@ -1,4 +1,4 @@
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC0F_WriteMultipleCoils;
+using Andromeda.Interop.Protocols.Modbus.Abstractions.Args;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -17,11 +17,11 @@ namespace Andromeda.Interop.Protocols.Modbus.Args.FC0F_WriteMultipleCoils
         {
         }
 
-        public static Task<ArgsResponseOk_0F> Create(
+        public static async Task<IArgsResponseOk_0F> Create(
             IArgsRequest_0F request,
-            Func<int, CancellationToken, Task<IReadOnlyList<byte>>> getBytes,
+            DGetBytes getBytes,
             CancellationToken token = default
-        ) => Create(
+        ) => await Create(
             (request, bytes) => new ArgsResponseOk_0F(request, bytes),
             request,
             getBytes,

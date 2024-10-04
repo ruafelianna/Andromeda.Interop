@@ -1,4 +1,3 @@
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC06_WriteSingleRegister;
 using Andromeda.Interop.Protocols.Modbus.Abstractions.Enums;
 using Andromeda.Numerics;
 using System.Collections.Generic;

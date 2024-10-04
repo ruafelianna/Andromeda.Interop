@@ -1,4 +1,4 @@
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC10_WriteMultipleRegisters;
+using Andromeda.Interop.Protocols.Modbus.Abstractions.Args;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -17,11 +17,11 @@ namespace Andromeda.Interop.Protocols.Modbus.Args.FC10_WriteMultipleRegisters
         {
         }
 
-        public static Task<ArgsResponseOk_10> Create(
+        public static async Task<IArgsResponseOk_10> Create(
             IArgsRequest_10 request,
-            Func<int, CancellationToken, Task<IReadOnlyList<byte>>> getBytes,
+            DGetBytes getBytes,
             CancellationToken token = default
-        ) => Create(
+        ) => await Create(
             (request, bytes) => new ArgsResponseOk_10(request, bytes),
             request,
             getBytes,

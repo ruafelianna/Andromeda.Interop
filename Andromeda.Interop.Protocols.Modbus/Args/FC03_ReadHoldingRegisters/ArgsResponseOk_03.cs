@@ -1,4 +1,4 @@
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC03_ReadHoldingRegisters;
+using Andromeda.Interop.Protocols.Modbus.Abstractions.Args;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -21,11 +21,11 @@ namespace Andromeda.Interop.Protocols.Modbus.Args.FC03_ReadHoldingRegisters
                 out _quantityOfRegisters
             );
 
-        public static Task<ArgsResponseOk_03> Create(
+        public static async Task<IArgsResponseOk_03> Create(
             IArgsRequest_03 request,
-            Func<int, CancellationToken, Task<IReadOnlyList<byte>>> getBytes,
+            DGetBytes getBytes,
             CancellationToken token = default
-        ) => Create(
+        ) => await Create(
             (request, bytes) => new ArgsResponseOk_03(request, bytes),
             request,
             getBytes,

@@ -1,4 +1,3 @@
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC0F_WriteMultipleCoils;
 using Andromeda.Interop.Protocols.Modbus.Abstractions.Enums;
 using Andromeda.Numerics;
 using System;

@@ -26,7 +26,7 @@ namespace Andromeda.Interop.Protocols.Modbus.Args
         protected static async Task<TResponse> Create(
             Func<TRequest, IReadOnlyList<byte>, TResponse> createInstance,
             TRequest request,
-            Func<int, CancellationToken, Task<IReadOnlyList<byte>>> getBytes,
+            DGetBytes getBytes,
             CancellationToken token = default
         )
         {

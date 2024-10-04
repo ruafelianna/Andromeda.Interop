@@ -1,4 +1,4 @@
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC01_ReadCoils;
+using Andromeda.Interop.Protocols.Modbus.Abstractions.Args;
 using Andromeda.Numerics;
 using System;
 using System.Collections.Generic;
@@ -23,11 +23,11 @@ namespace Andromeda.Interop.Protocols.Modbus.Args.FC01_ReadCoils
                 out _quantityOfCoils
             );
 
-        public static Task<ArgsResponseOk_01> Create(
+        public static async Task<IArgsResponseOk_01> Create(
             IArgsRequest_01 request,
-            Func<int, CancellationToken, Task<IReadOnlyList<byte>>> getBytes,
+            DGetBytes getBytes,
             CancellationToken token = default
-        ) => Create(
+        ) => await Create(
             (request, bytes) => new ArgsResponseOk_01(request, bytes),
             request,
             getBytes,

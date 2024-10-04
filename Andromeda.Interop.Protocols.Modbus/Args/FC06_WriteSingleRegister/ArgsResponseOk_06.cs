@@ -1,4 +1,4 @@
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC06_WriteSingleRegister;
+using Andromeda.Interop.Protocols.Modbus.Abstractions.Args;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -17,11 +17,11 @@ namespace Andromeda.Interop.Protocols.Modbus.Args.FC06_WriteSingleRegister
         {
         }
 
-        public static Task<ArgsResponseOk_06> Create(
+        public static async Task<IArgsResponseOk_06> Create(
             IArgsRequest_06 request,
-            Func<int, CancellationToken, Task<IReadOnlyList<byte>>> getBytes,
+            DGetBytes getBytes,
             CancellationToken token = default
-        ) => Create(
+        ) => await Create(
             (request, bytes) => new ArgsResponseOk_06(request, bytes),
             request,
             getBytes,
