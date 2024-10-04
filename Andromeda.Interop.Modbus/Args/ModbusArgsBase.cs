@@ -1,5 +1,5 @@
-using Andromeda.Interop.Modbus.Abstractions.Args;
-using Andromeda.Interop.Modbus.Abstractions.Enums;
+using Andromeda.Interop.Protocols.Modbus.Abstractions.Args;
+using Andromeda.Interop.Protocols.Modbus.Abstractions.Enums;
 using System;
 using System.Collections.Generic;
 

@@ -1,4 +1,4 @@
-using Andromeda.Interop.Modbus.Abstractions.Args.FC10_WriteMultipleRegisters;
+using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC10_WriteMultipleRegisters;
 using System;
 using System.Collections.Generic;
 using System.Threading;

@@ -1,4 +1,4 @@
-using Andromeda.Interop.Modbus.Abstractions.Args.FC04_ReadInputRegisters;
+using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC04_ReadInputRegisters;
 using System;
 using System.Collections.Generic;
 using System.Threading;

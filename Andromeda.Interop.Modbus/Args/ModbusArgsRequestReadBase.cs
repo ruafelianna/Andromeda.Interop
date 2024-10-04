@@ -1,4 +1,4 @@
-using Andromeda.Interop.Modbus.Abstractions.Enums;
+using Andromeda.Interop.Protocols.Modbus.Abstractions.Enums;
 using Andromeda.Numerics;
 using System;
 using System.Collections.Generic;

@@ -1,5 +1,5 @@
-using Andromeda.Interop.Modbus.Abstractions.Args.FC03_ReadHoldingRegisters;
-using Andromeda.Interop.Modbus.Abstractions.Enums;
+using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC03_ReadHoldingRegisters;
+using Andromeda.Interop.Protocols.Modbus.Abstractions.Enums;
 
 namespace Andromeda.Interop.Modbus.Args.FC03_ReadHoldingRegisters
 {

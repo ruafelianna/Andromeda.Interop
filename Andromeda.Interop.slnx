@@ -3,9 +3,9 @@
     <File Path=".gitattributes" />
     <File Path=".gitignore" />
   </Folder>
-  <Project Path="Andromeda.Interop.Specifications.ACPI\Andromeda.Interop.Specifications.ACPI.csproj" />
-  <Project Path="Andromeda.Interop.Protocols.Http\Andromeda.Interop.Protocols.Http.csproj" />
-  <Project Path="Andromeda.Interop.Modbus.Abstractions\Andromeda.Interop.Modbus.Abstractions.csproj" />
   <Project Path="Andromeda.Interop.Modbus\Andromeda.Interop.Modbus.csproj" />
   <Project Path="Andromeda.Interop.Ports.Serial.Abstractions\Andromeda.Interop.Ports.Serial.Abstractions.csproj" />
+  <Project Path="Andromeda.Interop.Protocols.Http\Andromeda.Interop.Protocols.Http.csproj" />
+  <Project Path="Andromeda.Interop.Protocols.Modbus.Abstractions\Andromeda.Interop.Protocols.Modbus.Abstractions.csproj" />
+  <Project Path="Andromeda.Interop.Specifications.ACPI\Andromeda.Interop.Specifications.ACPI.csproj" />
 </Solution>

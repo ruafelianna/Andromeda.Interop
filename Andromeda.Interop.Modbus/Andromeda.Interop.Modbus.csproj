@@ -17,7 +17,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Andromeda.Interop.Modbus.Abstractions\Andromeda.Interop.Modbus.Abstractions.csproj" />
+    <ProjectReference Include="..\Andromeda.Interop.Protocols.Modbus.Abstractions\Andromeda.Interop.Protocols.Modbus.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

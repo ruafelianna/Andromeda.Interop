@@ -1,4 +1,4 @@
-using Andromeda.Interop.Modbus.Abstractions.Args.FC06_WriteSingleRegister;
+using Andromeda.Interop.Protocols.Modbus.Abstractions.Args.FC06_WriteSingleRegister;
 using System;
 using System.Collections.Generic;
 using System.Threading;

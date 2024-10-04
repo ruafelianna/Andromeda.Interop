@@ -1,4 +1,4 @@
-using Andromeda.Interop.Modbus.Abstractions.Enums;
+using Andromeda.Interop.Protocols.Modbus.Abstractions.Enums;
 
 namespace Andromeda.Interop.Modbus.Args
 {
