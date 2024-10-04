@@ -26,5 +26,8 @@ namespace Andromeda.Interop.Modbus.Args
             }
             return result;
         }
+
+        public static ushort AsUShort(byte b1, byte b2)
+            => unchecked((ushort)((b1 << 8) | b2));
     }
 }
