@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Andromeda.Common\Andromeda.Numerics\Andromeda.Numerics.csproj" />
+    <ProjectReference Include="..\Andromeda.Interop.Ports.Serial.Abstractions\Andromeda.Interop.Ports.Serial.Abstractions.csproj" />
   </ItemGroup>
 
   <ItemGroup>
