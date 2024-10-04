@@ -19,5 +19,13 @@ namespace Andromeda.Interop.Modbus.Abstractions.Args.FC05_WriteSingleCoil
 
         const ModbusFunctionCodes StandardCode
             = ModbusFunctionCodes.WriteSingleCoil;
+
+        static ImmutableArray<ModbusExceptionCodes> ExpectedExceptionCodes
+            => [
+                ModbusExceptionCodes.InvalidFunctionCode,
+                ModbusExceptionCodes.InvalidDataAddress,
+                ModbusExceptionCodes.InvalidDataValue,
+                ModbusExceptionCodes.ServerDeviceFailure,
+            ];
     }
 }

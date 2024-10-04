@@ -1,4 +1,6 @@
 using Andromeda.Interop.Modbus.Abstractions.Enums;
+using System.Collections.Generic;
+using System.Collections.Immutable;
 
 namespace Andromeda.Interop.Modbus.Abstractions.Args.FC01_ReadCoils
 {
@@ -17,5 +19,13 @@ namespace Andromeda.Interop.Modbus.Abstractions.Args.FC01_ReadCoils
 
         const ModbusFunctionCodes StandardCode
             = ModbusFunctionCodes.ReadCoils;
+
+        static ImmutableArray<ModbusExceptionCodes> ExpectedExceptionCodes
+            => [
+                ModbusExceptionCodes.InvalidFunctionCode,
+                ModbusExceptionCodes.InvalidDataAddress,
+                ModbusExceptionCodes.InvalidDataValue,
+                ModbusExceptionCodes.ServerDeviceFailure,
+            ];
     }
 }

@@ -1,4 +1,5 @@
 using Andromeda.Interop.Modbus.Abstractions.Enums;
+using System.Collections.Immutable;
 
 namespace Andromeda.Interop.Modbus.Abstractions.Args.FC03_ReadHoldingRegisters
 {
@@ -17,5 +18,13 @@ namespace Andromeda.Interop.Modbus.Abstractions.Args.FC03_ReadHoldingRegisters
 
         const ModbusFunctionCodes StandardCode
             = ModbusFunctionCodes.ReadHoldingRegisters;
+
+        static ImmutableArray<ModbusExceptionCodes> ExpectedExceptionCodes
+            => [
+                ModbusExceptionCodes.InvalidFunctionCode,
+                ModbusExceptionCodes.InvalidDataAddress,
+                ModbusExceptionCodes.InvalidDataValue,
+                ModbusExceptionCodes.ServerDeviceFailure,
+            ];
     }
 }

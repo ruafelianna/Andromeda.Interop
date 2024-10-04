@@ -1,4 +1,5 @@
 using Andromeda.Interop.Modbus.Abstractions.Enums;
+using System.Collections.Immutable;
 
 namespace Andromeda.Interop.Modbus.Abstractions.Args.FC02_ReadDiscreteInputs
 {
@@ -17,5 +18,13 @@ namespace Andromeda.Interop.Modbus.Abstractions.Args.FC02_ReadDiscreteInputs
 
         const ModbusFunctionCodes StandardCode
             = ModbusFunctionCodes.ReadDiscreteInputs;
+
+        static ImmutableArray<ModbusExceptionCodes> ExpectedExceptionCodes
+            => [
+                ModbusExceptionCodes.InvalidFunctionCode,
+                ModbusExceptionCodes.InvalidDataAddress,
+                ModbusExceptionCodes.InvalidDataValue,
+                ModbusExceptionCodes.ServerDeviceFailure,
+            ];
     }
 }

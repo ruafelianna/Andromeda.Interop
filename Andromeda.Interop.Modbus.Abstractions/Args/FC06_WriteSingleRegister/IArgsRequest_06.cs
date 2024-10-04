@@ -1,4 +1,5 @@
 using Andromeda.Interop.Modbus.Abstractions.Enums;
+using System.Collections.Immutable;
 
 namespace Andromeda.Interop.Modbus.Abstractions.Args.FC06_WriteSingleRegister
 {
@@ -17,5 +18,13 @@ namespace Andromeda.Interop.Modbus.Abstractions.Args.FC06_WriteSingleRegister
 
         const ModbusFunctionCodes StandardCode
             = ModbusFunctionCodes.WriteSingleRegister;
+
+        static ImmutableArray<ModbusExceptionCodes> ExpectedExceptionCodes
+            => [
+                ModbusExceptionCodes.InvalidFunctionCode,
+                ModbusExceptionCodes.InvalidDataAddress,
+                ModbusExceptionCodes.InvalidDataValue,
+                ModbusExceptionCodes.ServerDeviceFailure,
+            ];
     }
 }

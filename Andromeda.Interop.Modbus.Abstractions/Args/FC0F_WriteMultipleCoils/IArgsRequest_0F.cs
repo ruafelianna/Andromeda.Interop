@@ -1,5 +1,6 @@
 using Andromeda.Interop.Modbus.Abstractions.Enums;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 
 namespace Andromeda.Interop.Modbus.Abstractions.Args.FC0F_WriteMultipleCoils
 {
@@ -22,5 +23,13 @@ namespace Andromeda.Interop.Modbus.Abstractions.Args.FC0F_WriteMultipleCoils
 
         const ModbusFunctionCodes StandardCode
             = ModbusFunctionCodes.WriteMultipleCoils;
+
+        static ImmutableArray<ModbusExceptionCodes> ExpectedExceptionCodes
+            => [
+                ModbusExceptionCodes.InvalidFunctionCode,
+                ModbusExceptionCodes.InvalidDataAddress,
+                ModbusExceptionCodes.InvalidDataValue,
+                ModbusExceptionCodes.ServerDeviceFailure,
+            ];
     }
 }
