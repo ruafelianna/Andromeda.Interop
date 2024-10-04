@@ -4,6 +4,7 @@
     <File Path=".gitignore" />
   </Folder>
   <Project Path="Andromeda.Interop.Ports.Serial.Abstractions\Andromeda.Interop.Ports.Serial.Abstractions.csproj" />
+  <Project Path="Andromeda.Interop.Ports.Serial\Andromeda.Interop.Ports.Serial.csproj" />
   <Project Path="Andromeda.Interop.Protocols.Http\Andromeda.Interop.Protocols.Http.csproj" />
   <Project Path="Andromeda.Interop.Protocols.Modbus.Abstractions\Andromeda.Interop.Protocols.Modbus.Abstractions.csproj" />
   <Project Path="Andromeda.Interop.Protocols.Modbus\Andromeda.Interop.Protocols.Modbus.csproj" />
