@@ -1,6 +1,6 @@
 using Andromeda.SourceGenerators.Enum;
 
-namespace Andromeda.Interop.Http.Enums
+namespace Andromeda.Interop.Protocols.Http.Enums
 {
     [HasStrings(StringsClass = nameof(MimeTypeConsts))]
     public enum MimeTypes

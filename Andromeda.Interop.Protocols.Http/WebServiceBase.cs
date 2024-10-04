@@ -1,6 +1,6 @@
-using Andromeda.Interop.Http.Enums;
-using Andromeda.Interop.Http.Exceptions;
-using Andromeda.Interop.Http.Extensions;
+using Andromeda.Interop.Protocols.Http.Enums;
+using Andromeda.Interop.Protocols.Http.Exceptions;
+using Andromeda.Interop.Protocols.Http.Extensions;
 using System;
 using System.Net.Http;
 using System.Text;
@@ -9,7 +9,7 @@ using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Andromeda.Interop.Http
+namespace Andromeda.Interop.Protocols.Http
 {
     public abstract class WebServiceBase
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Andromeda.Interop.Http.Exceptions
+namespace Andromeda.Interop.Protocols.Http.Exceptions
 {
     public class HttpNoResponseException : HttpException
     {

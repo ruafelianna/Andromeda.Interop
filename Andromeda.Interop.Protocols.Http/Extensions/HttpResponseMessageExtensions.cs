@@ -1,7 +1,7 @@
-using Andromeda.Interop.Http.Enums;
+using Andromeda.Interop.Protocols.Http.Enums;
 using System.Net.Http;
 
-namespace Andromeda.Interop.Http.Extensions
+namespace Andromeda.Interop.Protocols.Http.Extensions
 {
     public static class HttpResponseMessageExtensions
     {

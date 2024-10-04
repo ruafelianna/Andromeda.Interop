@@ -1,4 +1,4 @@
-namespace Andromeda.Interop.Http.Enums
+namespace Andromeda.Interop.Protocols.Http.Enums
 {
     public enum HttpStatusCodeType
     {

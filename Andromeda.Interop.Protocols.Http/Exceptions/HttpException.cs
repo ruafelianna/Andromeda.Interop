@@ -1,19 +1,19 @@
 using System;
 
-namespace Andromeda.Interop.Http.Exceptions
+namespace Andromeda.Interop.Protocols.Http.Exceptions
 {
-    public class HttpClientException : HttpException
+    public class HttpException : ApplicationException
     {
-        public HttpClientException()
+        public HttpException()
         {
         }
 
-        public HttpClientException(string? message) :
+        public HttpException(string? message) :
             base(message)
         {
         }
 
-        public HttpClientException(
+        public HttpException(
             string? message,
             Exception? innerException
         ) : base(message, innerException)
