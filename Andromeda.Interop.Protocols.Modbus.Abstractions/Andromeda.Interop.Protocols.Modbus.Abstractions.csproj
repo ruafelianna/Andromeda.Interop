@@ -1,26 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
+    <AdditionalFiles Include="**\*.toml" />
+    <EmbeddedResources Include="**\*.toml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Andromeda.Checksums" />
+    <PackageReference Include="Andromeda.Localization" />
     <PackageReference Include="Andromeda.SourceGenerators.Enum" OutputItemType="Analyzer" PrivateAssets="all" ReferenceOutputAssembly="False" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Andromeda.Common\Andromeda.Numerics\Andromeda.Numerics.csproj" />
     <ProjectReference Include="..\Andromeda.Interop.Ports.Serial.Abstractions\Andromeda.Interop.Ports.Serial.Abstractions.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Assets\ModbusExceptionCodesStrings.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ModbusExceptionCodesStrings.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Assets\ModbusExceptionCodesStrings.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ModbusExceptionCodesStrings.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
 </Project>

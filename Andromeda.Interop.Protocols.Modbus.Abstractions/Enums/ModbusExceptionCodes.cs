@@ -1,12 +1,13 @@
-using Andromeda.Interop.Protocols.Modbus.Abstractions.Assets;
+using Andromeda.Interop.Protocols.Modbus.Abstractions.Assets.Translations;
+using Andromeda.Localization.Abstractions;
 using Andromeda.SourceGenerators.Enum;
 
 namespace Andromeda.Interop.Protocols.Modbus.Abstractions.Enums
 {
-    [HasStrings(
+    [HasStrings<ITranslationUnit, ExMsgFormatter>(
         GenerateFunctions = true,
         StringsClass = nameof(ModbusExceptionCodesStrings),
-        StringsNamespace = $"{nameof(Andromeda)}.{nameof(Interop)}.{nameof(Protocols)}.{nameof(Modbus)}.{nameof(Abstractions)}.{nameof(Assets)}"
+        StringsNamespace = $"{nameof(Andromeda)}.{nameof(Interop)}.{nameof(Protocols)}.{nameof(Modbus)}.{nameof(Abstractions)}.{nameof(Assets)}.{nameof(Assets.Translations)}"
     )]
     public enum ModbusExceptionCodes : byte
     {
@@ -71,5 +72,11 @@ namespace Andromeda.Interop.Protocols.Modbus.Abstractions.Enums
         /// sent when server fails to respond
         /// </summary>
         GatewayTargetDeviceFailedToRespond = 0x0B,
+    }
+
+    internal class ExMsgFormatter : IFormatter<ITranslationUnit>
+    {
+        public string? AsString(ITranslationUnit? obj)
+            => obj?.Value;
     }
 }
