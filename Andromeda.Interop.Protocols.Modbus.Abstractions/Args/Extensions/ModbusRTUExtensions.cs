@@ -35,8 +35,8 @@ namespace Andromeda.Interop.Protocols.Modbus.Abstractions.Args.Extensions
 
             return [
                 .. main,
-                crc.Byte1(),
                 crc.Byte2(),
+                crc.Byte1(),
             ];
         }
     }

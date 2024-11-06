@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
     <AdditionalFiles Include="**\*.toml" />
-    <EmbeddedResources Include="**\*.toml" />
+    <EmbeddedResource Include="**\*.toml" />
   </ItemGroup>
 
   <ItemGroup>

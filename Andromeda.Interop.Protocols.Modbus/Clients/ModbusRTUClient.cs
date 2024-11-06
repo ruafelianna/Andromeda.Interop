@@ -205,7 +205,7 @@ namespace Andromeda.Interop.Protocols.Modbus.Clients
 
             var crc = args.RTU_CRC(address);
 
-            if (data[0] != crc.Byte1() || data[1] != crc.Byte2())
+            if (data[0] != crc.Byte2() || data[1] != crc.Byte1())
             {
                 throw new ModbusIncorrectResponseException("crc");
             }
